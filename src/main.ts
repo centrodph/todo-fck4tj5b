@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { TodoFormComponent } from './todo-form.component';
 
 export interface Todo {
   id: number;
@@ -16,11 +17,16 @@ const TODOS: Todo[] = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoFormComponent],
   templateUrl: './app.component.html',
 })
 export class App {
-  todos = TODOS;
+  todos = [...TODOS];
+
+  addTodo(description: string) {
+    const id = this.todos.length + 1;
+    this.todos.push({ id, description });
+  }
 }
 
 bootstrapApplication(App);
