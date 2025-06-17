@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+
+export interface Todo {
+  id: number;
+  description: string;
+}
+
+const TODOS: Todo[] = [
+  { id: 1, description: 'Buy milk' },
+  { id: 2, description: 'Walk the dog' },
+  { id: 3, description: 'Write code' },
+];
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
-  `,
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './app.component.html',
 })
 export class App {
-  name = 'Angular';
+  todos = TODOS;
 }
 
 bootstrapApplication(App);
