@@ -12,6 +12,11 @@ const TODOS: Todo[] = [
   { id: 1, description: 'Buy milk' },
   { id: 2, description: 'Walk the dog' },
   { id: 3, description: 'Write code' },
+  { id: 4, description: 'Write code' },
+  { id: 5, description: 'Write code' },
+  { id: 6, description: 'Write code' },
+  { id: 7, description: 'Write code' },
+  { id: 8, description: 'Write code' },
 ];
 
 @Component({
@@ -22,11 +27,6 @@ const TODOS: Todo[] = [
 })
 export class App {
   todos = [...TODOS];
-
-  addTodo(description: string) {
-    const id = this.todos.length + 1;
-    this.todos.push({ id, description });
-  }
 }
 
 bootstrapApplication(App);

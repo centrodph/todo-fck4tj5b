@@ -1,7 +1,9 @@
 <h1>Todo List</h1>
-<todo-form (add)="addTodo($event)"></todo-form>
+<div style="overflow-y: auto; height: 100px; background-color: azure;">
 <ul>
-  <li *ngFor="let todo of todos">
-    {{ todo.id }} - {{ todo.description }}
+  <li>
+     todo.id  -  todo.description 
   </li>
 </ul>
+</div>
+<todo-form></todo-form>
